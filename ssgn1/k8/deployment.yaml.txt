@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo5
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo5
+    spec:
+      containers:
+      - name: wordpress
+        image: m22cs007/wordpress:latest
+        ports:
+        - containerPort: 80
+  selector:
+    matchLabels:
+      app: demo5
+ 
